@@ -1,4 +1,4 @@
-CFLAGS = -Wall -std=c99
+CFLAGS = -Wall -std=c99 -g -Werror -O3
 
 SRCS = h.c
 OBJS = $(SRCS:.c=.o)
