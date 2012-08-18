@@ -5,14 +5,9 @@ H is a small program which, upon execution, prints the lowercase letter `h` (ASC
 1.	`make`
 2.	`./h [-f <filename> | -h | -H]`
 
-> -f <filename>
+-f <filename>
   write out 'h' to <filename>
-> -h
+-h
   print out the small 'h'
-> -H 
+-H 
   print out the big 'H'
-
-
-	
-
-
