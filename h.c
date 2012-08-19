@@ -16,7 +16,7 @@ int open_h_file(char *input[]){
   return 0;
 }
 
-int main(int argc, char *argv[]) {      
+int main(int argc, char *argv[]) {
   if(argc < 2){
     fprintf(stderr, "%s", usage);
     return 1;
