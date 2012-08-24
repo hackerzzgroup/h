@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 static char small_h = 'h';
 static char big_h   = 'H';
-static char *usage = "usage: ./h [-f <file> | -h | -H]\n";
+static char *usage = "usage: ./h [-f <file> | -h | -H | -y]\n";
 
-int open_h_file(char *input[]){
+static int open_h_file(char *input[]){
   FILE *h_file;
   if(!(h_file = fopen(input[2], "a+"))){
     perror("fopen");
@@ -28,7 +29,9 @@ int main(int argc, char *argv[]) {
       fprintf(stdout, "%c\n", big_h);
     if(strcmp(argv[1], "-h") == 0)
       fprintf(stdout, "%c\n", small_h);
+    if(strcmp(argv[1], "-y") == 0)
+      while(1)
+	fprintf(stdout, "%c\n", small_h);    
   }
   return 0;
 }
-
