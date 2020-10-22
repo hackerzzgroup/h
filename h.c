@@ -17,17 +17,15 @@ int open_h_file(char *path){
 }
 
 int main(int argc, char *argv[]) {
-  if(argc < 2){
+  if(argc == 3 && !strcmp(argv[1], "-f")){
+    open_h_file(argv[2]);
+  } else if(argc == 2 && !strcmp(argv[1], "-H")) {
+    fprintf(stdout, "%c\n", big_h);
+  } else if(argc == 2 && !strcmp(argv[1], "-h")) {
+    fprintf(stdout, "%c\n", small_h);
+  } else {
     fprintf(stderr, "%s", usage);
     return 1;
-  }
-  if(argc >= 2){
-    if(strcmp(argv[1], "-f") == 0)
-      open_h_file(argv[2]);
-    if(strcmp(argv[1], "-H") == 0)
-      fprintf(stdout, "%c\n", big_h);
-    if(strcmp(argv[1], "-h") == 0)
-      fprintf(stdout, "%c\n", small_h);
   }
   return 0;
 }
