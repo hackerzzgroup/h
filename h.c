@@ -5,9 +5,9 @@ static char small_h = 'h';
 static char big_h   = 'H';
 static char *usage = "usage: ./h [-f <file> | -h | -H]\n";
 
-int open_h_file(char *input[]){
+int open_h_file(char *path){
   FILE *h_file;
-  if(!(h_file = fopen(input[2], "a+"))){
+  if(!(h_file = fopen(path, "a+"))){
     perror("fopen");
     return 1;
   }  
@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
   }
   if(argc >= 2){
     if(strcmp(argv[1], "-f") == 0)
-      open_h_file(argv);
+      open_h_file(argv[2]);
     if(strcmp(argv[1], "-H") == 0)
       fprintf(stdout, "%c\n", big_h);
     if(strcmp(argv[1], "-h") == 0)
