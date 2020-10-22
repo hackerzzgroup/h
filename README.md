@@ -8,3 +8,7 @@ H is a small program which, upon execution, prints the lowercase letter `h` (ASC
 4.	`./h -H  print out the big H`
 5.	`./h -f filename  print out h to a file`
 
+## Usage (enterprise edition)
+1. `docker build . -t h`
+2. `docker run h`
+3. `docker run h -H`
